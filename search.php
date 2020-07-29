@@ -36,7 +36,7 @@ foreach ($tracks as $key => $value){
 $id = $value['vid'];
 $title = $value['album']['name'];
 $img = $value['album']['url_pic']['uri'];
-$thumbnail = '<a href="getmp3.php?vid=$id&name=$title"><img src="https://p16.resso.app/img/'.$img.'~tplv-crop-center:150:150.webp" alt="image" width="60px" height="60px"></a>';
+$thumbnail = '<a href="getmp3.php?vid='.$id.'&name='.$title.'"><img src="https://p16.resso.app/img/'.$img.'~tplv-crop-center:150:150.webp" alt="image" width="60px" height="60px"></a>';
 echo "<div class='column'>";
 echo "$thumbnail<br>";
 echo "<a href='getmp3.php?vid=$id&name=$title'>$title</a>";
