@@ -15,14 +15,9 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 $rspns = curl_exec($ch);
 $data = json_decode($rspns, true);
-//$fr1 = $data['video_info']['data']['video_list']['video_1']['quality'];
 $q1 = $data['video_info']['data']['video_list']['video_1']['main_url'];
-//$fr2 = $data['video_info']['data']['video_list']['video_1']['quality'];
-//$q2 = $data['video_info']['data']['video_list']['video_2']['main_url'];
-//$fr3 = $data['video_info']['data']['video_list']['video_1']['quality'];
-//$q3 = $data['video_info']['data']['video_list']['video_3']['main_url'];
 $qq = strstr($q1, '?', true);
-header("Location: d.php?file=$qq&nm=$name");
+header("Location: download.php?file=$qq&nm=$name");
 }
 else {
 echo "Provide Video ID";
