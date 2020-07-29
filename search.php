@@ -27,9 +27,8 @@ a{color: white}
 <body>
 <?php
 $q = $_GET['q'];
-$qu = urldecode($q);
-$str = preg_replace('/\s/', '', $qu);
-$file = file_get_contents('https://api.resso.app/resso/track/search?q='.$str.'&region=IN&geo_region=in');
+$qu = urlencode($q);
+$file = file_get_contents('https://api.resso.app/resso/track/search?q='.$qu.'&region=IN&geo_region=in');
 $de = json_decode($file, true);
 $tracks = $de['tracks'];
 foreach ($tracks as $key => $value){
